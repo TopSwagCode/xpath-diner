@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CSS Diner - Where we feast on CSS Selectors!</title>
+    <title>Xpath Diner - Where we feast on Xpath Selectors!</title>
     <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/levels.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/restaurant.js" type="text/javascript" charset="utf-8"></script>
@@ -13,10 +13,10 @@
     <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" type="text/css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
 
-    <meta property="og:url"           content="http://cssdiner.com" />
+    <meta property="og:url"           content="http://xpath.topswagcode.com" />
     <meta property="og:type"          content="website" />
-    <meta property="og:title"         content="CSS Diner" />
-    <meta property="og:description"   content="A fun game to help you learn and practice CSS selectors." />
+    <meta property="og:title"         content="Xpath Diner" />
+    <meta property="og:description"   content="A fun game to help you learn and practice Xpath selectors." />
     <meta property="og:image"         content="https://flukeout.github.io/images/fb-share.jpg" />
   </head>
 
@@ -24,7 +24,7 @@
     <div class="left-col">
 
       <header>
-        CSS Diner
+        Xpath Diner
         <div class="logo">
           <plate><apple /></plate>
         </div>
@@ -41,22 +41,21 @@
       <div class="note">
         <h3>No worries, you've got this!</h3>
         <p>
-          You're about to learn CSS Selectors!
-          Selectors are how you pick which element to apply styles to.
+          You're about to learn Xpath Selectors!
+          Selectors are how you pick which elements to focus.
         </p>
 
-        <h4>Exhibit 1 - A CSS Rule</h4>
+        <h4>Exhibit 1 - A Xpath Selector</h4>
 
         <pre>
-p {
-   margin-bottom: 12px;
-}</pre>
+//Div[@class='header']
+</pre>
 
         <p>
-          Here, the "p" is the selector (selects all &lt;p&gt; elements) and applies the margin-bottom style.
+          Here, the "//" and "Div" means it will check all paths until it finds a Div element in your document (XML/HTML). "[@class='header']" means the Div has to contain a class attribute with the value header.
         </p>
         <p>
-          To play, type in a CSS selector in the editor below to select the correct items on the table.If you get it right, you'll advance to the next level.
+          To play, type in a Xpath selector in the editor below to select the correct items on the table.If you get it right, you'll advance to the next level.
         </p>
         <p>
           Hover over the items on the table to see their HTML markup.
@@ -85,17 +84,16 @@ p {
 
         <div class="editor-pane">
           <div class="input-header">
-            <div class="file-name">style.css</div> CSS Editor
+            <div class="file-name">webguitest.cs</div> C# Editor
           </div>
           <div class="file-window css-view">
             <div class="line-numbers">
               1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20
             </div>
-              <input class="input-strobe" type="text" placeholder="Type in a CSS selector"/><span class="plus">+</span><div class="enter-button">enter</div>
+              <input class="input-strobe" type="text" placeholder="Type in a Xpath selector"/><span class="plus">+</span><div class="enter-button">enter</div>
             <div>
             {<br/>
-            /* Styles would go here. */<br/>
-            }
+
             </div>
             <div class="help">
               <br/>
@@ -120,10 +118,10 @@ p {
 
       <div class="what-is-this">
         <p>
-          Made by <a href="http://www.twitter.com/flukeout">@flukeout</a> &mdash; come say hi!
+          Made by <a href="http://www.topswagcode.com">TopSwagCode</a> &mdash; come say hi!
         </p>
         <p>
-          Have feedback or questions? Please file an isssue on <a href="https://github.com/flukeout/css-diner/issues">the Github repo</a>.
+          Have feedback or questions? Please file an isssue on <a href="https://github.com/kiksen1987/xpath-diner/issues">the Github repo</a>.
         </p>
       </div>
 
@@ -172,12 +170,11 @@ p {
   <script>
     if(location.hostname != "localhost"){
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-62998410-1', 'auto');
-      ga('send', 'pageview');
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-73730823-1', 'auto');
+        ga('send', 'pageview');
     } else {
       var ga = false;
     }
