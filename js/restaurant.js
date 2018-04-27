@@ -17,14 +17,12 @@ $.fn.xpathEvaluate = function (xpathExpression) {
   $this = this.first(); // Don't make me deal with multiples before coffee
 
   // Evaluate xpath and retrieve matching nodes
-  var table = document.getElementsByClassName('table');
-  
-  xpathResult = document.evaluate(xpathExpression, this[0], null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);
+  //xpathResult = document.evaluate(xpathExpression, this[0], null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);
+  xpathResult = document.evaluate('//div[@class="table"]'+xpathExpression, document, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);
   
   result = [];
   while (elem = xpathResult.iterateNext()) {
      result.push(elem);
-     console.log(elem)
   }
 
   $result = jQuery([]).pushStack( result );
@@ -544,8 +542,12 @@ function winGame(){
 
 function checkResults(ruleSelected,levelSelected,rule){
   var ruleTable = $(".table").clone();
-  ruleTable.find(".strobe").removeClass("strobe");
+  //ruleTable.find(".strobe").removeClass("strobe");
   ruleTable.xpathEvaluate(rule).addClass("strobe");
+
+  console.log(ruleTable)
+  console.log(ruleTable.html())
+
   return($(".table").html() == ruleTable.html());
 }
 
@@ -665,7 +667,7 @@ function loadLevel(){
 
   //Strobe what's supposed to be selected
   setTimeout(function(){
-    $(document).xpathEvaluate('//div[@class="table"]'+level.selector).addClass("strobe");
+    $(document).xpathEvaluate(level.selector).addClass("strobe");
     //$(".table " + level.selector).addClass("strobe");
     $(".pop").removeClass("pop");
   },200);
