@@ -13,12 +13,11 @@
 
 $.fn.xpathEvaluate = function (xpathExpression) {
 
-  // NOTE: vars not declared local for debug purposes
-  $this = this.first(); // Don't make me deal with multiples before coffee
-
-  // Evaluate xpath and retrieve matching nodes
-  //xpathResult = document.evaluate(xpathExpression, this[0], null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);
-  xpathResult = document.evaluate('//div[@class="table"]'+xpathExpression, document, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);
+  if(xpathExpression.startsWith("//")){
+    xpathExpression = xpathExpression.substring(2,test.length);
+  }
+  
+  xpathResult = document.evaluate(xpathExpression, document.getElementById("gametable"), null, XPathResult.ANY_TYPE, null);
   
   result = [];
   while (elem = xpathResult.iterateNext()) {

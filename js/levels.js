@@ -232,7 +232,7 @@ var levels = [
       helpTitle: "Select element at given index",
       syntax: "(A)[Index]",
       doThis : "Select the third pickle",
-      selector : "//pickle",
+      selector : "(//pickle)[3]",
       help : "You can select a specific element given within a xpath result.",
       examples : [
         '<strong>(//a)[2]</strong> will select second <strong>A</strong>'
