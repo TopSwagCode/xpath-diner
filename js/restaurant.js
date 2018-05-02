@@ -14,7 +14,7 @@
 $.fn.xpathEvaluate = function (xpathExpression) {
 
   if(xpathExpression.startsWith("//")){
-    xpathExpression = xpathExpression.substring(2,test.length);
+    xpathExpression = xpathExpression.substring(2,xpathExpression.length);
   }
   
   xpathResult = document.evaluate(xpathExpression, document.getElementById("gametable"), null, XPathResult.ANY_TYPE, null);
@@ -543,9 +543,6 @@ function checkResults(ruleSelected,levelSelected,rule){
   var ruleTable = $(".table").clone();
   //ruleTable.find(".strobe").removeClass("strobe");
   ruleTable.xpathEvaluate(rule).addClass("strobe");
-
-  console.log(ruleTable)
-  console.log(ruleTable.html())
 
   return($(".table").html() == ruleTable.html());
 }
