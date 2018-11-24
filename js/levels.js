@@ -122,15 +122,10 @@ var levels = [
       boardMarkup :`
       <apple/>
       <apple class="small"/>
-      <bento>
-        <orange class="small"/>
-      </bento>
-      <plate>
-        <orange/>
-      </plate>
-      <plate>
-        <orange class="small"/>
-      </plate>`
+      <orange class="small"/>
+      <orange/>
+      <orange class="small"/>
+      `
     },
     {
       doThis : "Select the small oranges in the bentos",
@@ -297,5 +292,93 @@ var levels = [
           <orange>
         </plate>
         <pickle class="small"/>`
-    }
+    },
+    {
+      selectorName: "Attribute Selector",
+      helpTitle: "Select all elements that have a specific attribute",
+      doThis : "Select the items for someone",
+      selector : "//*[@for]",
+      syntax: "//*[@attribute]",
+      help : 'Attributes appear inside the opening tag of an element, like this: <tag>span attribute="value"</tag>. An attribute does not always have a value, it can be blank!',
+      examples : [
+        '<strong>//a[@href]</strong> selects all <tag>a</tag> elements that have a <strong>href="anything"</strong> attribute.',
+        '<strong>//*[@type]</strong> selects all elements that have a <strong>type="anything"</strong>. attribute'
+      ],
+      boardMarkup:`
+      <bento><apple class="small"/></bento>
+      <apple for="Ethan"/>
+      <plate for="Alice"><pickle/></plate>
+      <bento for="Clara"><orange/></bento>
+      <pickle/>`
+    },
+    {
+      selectorName: "Attribute Selector",
+      helpTitle: "Select all elements that have a specific attribute",
+      doThis : "Select the plates for someone",
+      selector : "//plate[@for]",
+      syntax: "//A[@attribute]",
+      help : "Combine the attribute selector with another selector (like the tag name selector) by adding it to the end.",
+      examples : [
+        '<strong>//*[@value]</strong> selects all elements that have a <strong>value="anything"</strong> attribute.',
+        '<strong>//a[@href]</strong> selects all <tag>a</tag> elements that have a <strong>href="anything"</strong> attribute.',
+        '<strong>//input[@disabled]</strong> selects all <tag>input</tag> elements with the <strong>disabled</strong> attribute'
+      ],
+      boardMarkup:`
+      <plate for="Sarah"><pickle/></plate>
+      <plate for="Luke"><apple/></plate>
+      <plate/>
+      <bento for="Steve"><orange/></bento>
+      `
+    },
+    {
+      selectorName: "Attribute Value Selector",
+      helpTitle: "Select all elements that have a specific attribute value",
+      doThis : "Select Vitaly's meal",
+      selector : "//*[@for='Vitaly']",
+      syntax: "//*[@attribute='value']",
+      help : "Attribute selectors are case sensitive, each character must match exactly.",
+      examples : [
+        '<strong>//input[@type="checkbox"]</strong> selects all checkbox input elements.'
+      ],
+      boardMarkup:`
+      <apple for="Alexei" />
+      <bento for="Albina"><apple /></bento>
+      <bento for="Vitaly"><orange/></bento>
+      <pickle/>
+      `
+    },
+    {
+      selectorName: "Attribute Starts With Selector",
+      helpTitle: "Select all elements with an attribute value that starts with specific characters",
+      doThis : "Select the items for names that start with 'Sa'",
+      selector : "//*[starts-with(@for,'Sa')]",
+      syntax: '//*[starts-with(attribute^="value"]',
+      // help : "You can use quotes around the value in the selector, or not&mdash;it's optional!",
+      examples : [
+        '<strong>//toy[starts-with(category,"Swim")]</strong> selects elements with class <strong>toy</strong> and either <strong>category="Swimwear</strong> or <strong>category="Swimming"</strong>.'
+      ],
+      boardMarkup: `
+      <plate for="Sam"><pickle/></plate>
+      <bento for="Sarah"><apple class="small"/></bento>
+      <bento for="Mary"><orange/></bento>
+      `
+    },
+    {
+      selectorName: "Attribute Ends With Selector",
+      helpTitle: "Select all elements with an attribute value that ends with specific characters. The 'ends-with' function is part of xpath 2.0 but browsers generally only support 1.0",
+      doThis : "Select the items for names that end with 'ato'",
+      selector : "//*[substring(@for, string-length(@for) - string-length('ato') +1) = 'ato']",
+      syntax: "//*[substring(@attribute, string-length(@attribute) - string-length('end text') +1) = 'end text']",
+      help : '',
+      examples : [
+        "<strong>//img[substring(@src, string-length(@src) - string-length('.jpg')+1 ) '.jpg' ]</strong> selects all images display a <strong>.jpg</strong> image.",
+      ],
+      boardMarkup:`
+      <apple class="small"/>
+      <bento for="Hayato"><pickle/></bento>
+      <apple for="Ryota"></apple>
+      <plate for="Minato"><orange/></plate>
+      <pickle class="small"/>
+      `
+    },
   ];
