@@ -352,10 +352,10 @@ var levels = [
       helpTitle: "Select all elements with an attribute value that starts with specific characters",
       doThis : "Select the items for names that start with 'Sa'",
       selector : "//*[starts-with(@for,'Sa')]",
-      syntax: '//*[starts-with(attribute, "value")]',
+      syntax: '//*[starts-with(@attribute, "value")]',
       // help : "You can use quotes around the value in the selector, or not&mdash;it's optional!",
       examples : [
-        '<strong>//toy[starts-with(category,"Swim")]</strong> selects elements with class <strong>toy</strong> and either <strong>category="Swimwear</strong> or <strong>category="Swimming"</strong>.'
+        '<strong>//toy[starts-with(@category,"Swim")]</strong> selects elements with tag <strong>toy</strong> and either <strong>category="Swimwear</strong> or <strong>category="Swimming"</strong>.'
       ],
       boardMarkup: `
       <plate for="Sam"><pickle/></plate>
