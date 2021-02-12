@@ -371,7 +371,7 @@ var levels = [
       syntax: "//*[substring(@attribute, string-length(@attribute) - string-length('end text') +1) = 'end text']",
       help : '',
       examples : [
-        "<strong>//img[substring(@src, string-length(@src) - string-length('.jpg')+1 ) '.jpg' ]</strong> selects all images display a <strong>.jpg</strong> image.",
+        "<strong>//img[substring(@src, string-length(@src) - string-length('.jpg')+1 ) = '.jpg' ]</strong> selects all images display a <strong>.jpg</strong> image.",
       ],
       boardMarkup:`
       <apple class="small"/>
