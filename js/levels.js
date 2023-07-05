@@ -274,7 +274,7 @@ var levels = [
     {
       selectorName: "Last selector",
       helpTitle: "Select the last element inside of another element",
-      doThis : "Select the big apple and the big orange",
+      doThis : "Select the small apple and the big orange",
       selector : "//plate/*[last()]",
       syntax: "last()",
       help : "You can use this selector to select an element that is the last child element inside of another element. <br><br>Pro Tip &rarr; In cases where there is only one element, that element counts as the first-child, only-child and last-child!",
